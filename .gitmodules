@@ -1,3 +1,6 @@
 [submodule "helpers"]
 	path = helpers
 	url = https://github.com/johanneskastl/helpers.git
+[submodule "ansible/roles/johanneskastl.create_a_vimrc"]
+	path = ansible/roles/johanneskastl.create_a_vimrc
+	url = https://github.com/johanneskastl/ansible-role-create_a_vimrc.git
