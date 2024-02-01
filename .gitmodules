@@ -25,3 +25,6 @@
 [submodule "ansible/roles/johanneskastl.add_zypper_repository"]
 	path = ansible/roles/johanneskastl.add_zypper_repository
 	url = https://github.com/johanneskastl/ansible-role-add_zypper_repository.git
+[submodule "ansible/roles/johanneskastl.zypper_ref_accept_keys"]
+	path = ansible/roles/johanneskastl.zypper_ref_accept_keys
+	url = https://github.com/johanneskastl/ansible-role-zypper_ref_accept_keys.git
