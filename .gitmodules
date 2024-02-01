@@ -22,3 +22,6 @@
 [submodule "ansible/roles/johanneskastl.add_screenrc"]
 	path = ansible/roles/johanneskastl.add_screenrc
 	url = https://github.com/johanneskastl/ansible-role-add_screenrc.git
+[submodule "ansible/roles/johanneskastl.add_zypper_repository"]
+	path = ansible/roles/johanneskastl.add_zypper_repository
+	url = https://github.com/johanneskastl/ansible-role-add_zypper_repository.git
