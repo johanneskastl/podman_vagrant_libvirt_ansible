@@ -1,0 +1,38 @@
+---
+- name: 'Configure Podman authentification for registry.dmz.ojkastl.de'
+  hosts: 'all'
+  gather_facts: false
+  become: false
+
+  tasks:
+
+    - name: 'Create .config/containers/ directory'
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: 'directory'
+        owner: 'vagrant'
+        group: 'vagrant'
+        mode: '0700'
+      loop:
+        - '.config/'
+        - '.config/containers/'
+
+    - name: 'Copy auth.json'
+      ansible.builtin.copy:
+        src: "{{ item }}"
+        dest: '.config/containers/auth.json'
+        owner: 'vagrant'
+        group: 'vagrant'
+        mode: '0600'
+      with_fileglob: '~/.config/containers/auth.json'
+
+    - name: 'Copy registries.conf'
+      ansible.builtin.copy:
+        src: "{{ item }}"
+        dest: '.config/containers/registries.conf'
+        owner: 'vagrant'
+        group: 'vagrant'
+        mode: '0644'
+        # file might be link, e.g. using HomeManager
+        local_follow: true
+      with_fileglob: '~/.config/containers/registries.conf'
