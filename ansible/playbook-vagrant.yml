@@ -1,8 +1,5 @@
 ---
 
-- name: 'Run playbook-all_nodes-update_debian_ubuntu_sources.yml'
-  ansible.builtin.import_playbook: playbook-all_nodes-update_debian_ubuntu_sources.yml
-
 - name: 'Run playbook-all_nodes-create_a_vimrc.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-create_a_vimrc.yml
 
