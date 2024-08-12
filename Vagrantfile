@@ -4,12 +4,12 @@ Vagrant.configure("2") do |config|
   config.vm.define "podman" do |node|
 
     # which image to use
-    node.vm.box = "generic/ubuntu2204"
+    node.vm.box = "fedora/40-cloud-base"
 
     # sizing of the VMs
     node.vm.provider "libvirt" do |lv|
       lv.random_hostname = false
-      lv.memory = 8196
+      lv.memory = 8192
       lv.cpus = 2
     end
 
