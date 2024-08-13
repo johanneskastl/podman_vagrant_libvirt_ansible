@@ -12,6 +12,9 @@
 - name: 'Run playbook-all_nodes-minimal_bashrc.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-minimal_bashrc.yml
 
+- name: 'Run playbook-all_nodes-install_git.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-install_git.yml
+
 - name: 'Run playbook-all_nodes-load_iptables_module.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-load_iptables_module.yml
 
