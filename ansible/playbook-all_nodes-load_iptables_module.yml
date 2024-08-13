@@ -1,0 +1,25 @@
+---
+- name: 'Make sure the iptables module is loaded'
+  hosts: 'all'
+  gather_facts: true
+  become: true
+
+  tasks:
+
+    - name: 'Create /etc/modules-load.d/ip_tables.conf'
+      ansible.builtin.copy:
+        dest: '/etc/modules-load.d/ip_tables.conf'
+        content: |
+          ip_tables
+        owner: 'root'
+        group: 'root'
+        mode: '0644'
+      notify:
+        - 'Restart the systemd-modules-load.service'
+
+  handlers:
+
+    - name: 'Restart the systemd-modules-load.service'
+      ansible.builtin.service:
+        name: 'systemd-modules-load.service'
+        state: 'restarted'
